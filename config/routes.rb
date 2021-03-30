@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/:id/post_room', to: 'users#post_room'
   get 'users/:id/reserved_room', to: 'users#reserved_room'
+  delete 'users/:id/destroy', to: 'users#destroy'
+  delete 'users/:id/cancel', to: 'users#cancel'
   post 'users/:id/update', to: 'users#update'
 
 

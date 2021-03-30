@@ -34,6 +34,7 @@
                 <td class="align-middle"><%= reservation.start %></td>
                 <td class="align-middle"><%= reservation.finish %></td>
                 <td class="align-middle"><%= reservation.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+                <td class="align-middle"><%= link_to "キャンセル", "/users/#{reservation.id}/cancel", method: :delete, data: { confirm: 'キャンセルしますか？' } %></td>
             </tr>
         <% end %>
     </tbody>

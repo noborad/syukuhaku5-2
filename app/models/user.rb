@@ -9,9 +9,9 @@ class User < ApplicationRecord
 
   
 
-  has_many :rooms
-  has_many :reservations
-  has_many :reserved_rooms, through: :reservations, source: :rooms
+  has_many :rooms, dependent: :destroy
+  has_many :reservations, dependent: :destroy
+  has_many :reserved_rooms, through: :reservations, source: :rooms, dependent: :destroy
 
   # mount_uploader :image, ImageUploader
 end

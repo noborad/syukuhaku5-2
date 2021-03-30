@@ -69,6 +69,20 @@ class UsersController < ApplicationController
   #   end
   # end
 
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    @user = current_user.id
+    redirect_to "/users/#{@user}/post_room"
+  end
+
+  def cancel
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    @user = current_user.id
+    redirect_to "/users/#{@user}/reserved_room"
+  end
+
   protected
 
   def configure_account_update_params
