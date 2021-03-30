@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'devise-i18n'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
 # Use sqlite3 as the database for Active Record
