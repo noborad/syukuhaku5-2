@@ -6,6 +6,8 @@ class Room < ApplicationRecord
     validates :introduction, {presence: true, length:{maximum: 140}}
     validates :room_image, {presence: true}
 
+    has_one_atached :room_image
+
     def self.search(search)
       if search
         Room.where(['address LIKE ?', "%#{search}%"])

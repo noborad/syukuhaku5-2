@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'devise-i18n'
 
+gem "aws-sdk-s3", require: false #追記
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
