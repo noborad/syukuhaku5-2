@@ -1,0 +1,31 @@
+
+
+
+
+<div class="text-center">
+    <h1>プロフィール</h1>
+    <p>プロフィール確認・編集画面</p>
+    <%= form_for current_user, url: {action: 'profile_update'} do |f| %>
+    
+        <div class="field">
+            <img src="<%= current_user.user_image %>" alt="" class="avator rounded-circle"><br />
+            <%= f.file_field :user_image %>
+        </div>
+
+        <div class="field">
+            <%= f.label :名前 %><br />
+            <%= f.text_field :user_name %>
+        </div>
+
+        <div class="field">
+            <%= f.label :自己紹介文 %><br />
+            <%= f.text_area :introduction %>
+        </div>
+
+    
+    
+        <div class="actions">
+            <%= f.submit "Update" %>
+        </div>
+    <% end %>
+</div>

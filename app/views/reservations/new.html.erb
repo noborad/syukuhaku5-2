@@ -1,0 +1,48 @@
+<div class="reservations">
+    <div class="reservation">
+        <h1>予約確認画面</h1>
+
+        <%= form_with url: "/reservations/#{@room.id}/create" do |f| %>
+
+                    <div>
+                        <%= f.label :チェックイン %>
+                        <%= f.hidden_field :start, value: params[:start] %>
+                        <%= params[:start] %>
+                    </div>
+
+                    <div>
+                        <%= f.label :チェックアウト %>
+                        <%= f.hidden_field :finish, value: params[:finish] %>
+                        <%= params[:finish] %>
+                    </div>
+
+                    <div>
+                        <%= f.label :人数 %>
+                        <%= f.hidden_field :person, value: params[:person] %>
+                        <%= params[:person] %>
+                    </div>
+
+                    <div>
+                        <%= f.label :利用料金 %>
+                        <%= f.hidden_field :cost, value: params[:cost].to_i * (params[:finish].to_date - params[:start].to_date).to_i * params[:person].to_i %>
+                        <%= params[:cost].to_i * (params[:finish].to_date - params[:start].to_date).to_i * params[:person].to_i %>
+                    </div>
+
+                    <div>
+                        <%= f.label :ルームid %>
+                        <%= f.hidden_field :room_id, value: params[:room_id] %>
+                        <%= params[:room_id] %>
+                    </div>
+
+                    <div>
+                        <%= f.label :ユーザーid %>
+                        <%= f.hidden_field :user_id, value: current_user.id %>
+                        <%= current_user.id %>
+                    </div>
+
+                    <%= f.submit :予約する %>
+                    <%= link_to "戻る", :back %>
+        <% end %>
+        
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<h1 class="container-fluid">宿泊施設一覧</h1>
+<div class="index container-fluid">
+    <% @rooms.each do |room| %>
+        <div class="col-3">
+            <%= link_to("/rooms/#{room.id}", class: "index-content") do %>
+                    <div><img src="<%= room.room_image   %>" class="room-image"></div>
+                    <div><%= room.name    %></div>
+                    <div><%= room.address %></div>
+                    <div><%= room.cost    %>円</div>
+            <% end %>
+        </div>
+    <% end %>
+</div>

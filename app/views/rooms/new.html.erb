@@ -1,0 +1,47 @@
+<div class="text-center room-new">
+
+    <h1>ルーム登録</h1>
+
+    
+    <%= form_with model: @room, local: true, multipart: true do |f| %>
+        
+        <%= render "shared/error_messages", model: f.object %>
+
+    
+
+        <div class="regist-room form-group col-auto">
+            <%= f.label :ルーム名 %>
+            <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="regist-room form-group col-auto">
+            <%= f.label :ルーム紹介 %>
+            <%= f.text_area :introduction, class: "form-control" %>
+        </div>
+
+        <div class="regist-room form-group col-auto">
+            <%= f.label :料金 %>
+            <%= f.text_field :cost, class: "form-control" %>
+        </div>
+
+        <div class="regist-room form-group col-auto">
+            <%= f.label :住所 %>
+            <%= f.text_field :address, class: "form-control" %>
+        </div>
+
+        <div class="regist-room form-group col-12">
+            <%= f.label :ルーム画像 %>
+            <%= f.file_field :room_image, class: "" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.hidden_field :user_id, value: current_user.id%>
+        </div>
+
+        <div class="form-group">
+            <%= f.submit %>
+        </div>
+
+    <% end %>
+
+</div>

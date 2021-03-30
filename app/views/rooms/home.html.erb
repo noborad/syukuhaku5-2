@@ -1,0 +1,36 @@
+<div class="jumbotron text-center">
+    <p>検索</p>
+    <%= form_tag("/rooms",:method => 'get') do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '探す', :name => nil %>
+    <% end %>
+</div>
+
+<h2>おすすめエリア</h2>
+
+<ul class="area-box">
+    <li class="area-list">
+        <%= link_to "/rooms?search=東京", class: 'area-link' do %>
+            <img src="/assets/img_tokyo.jpg" alt="東京" class="area-img">
+            <div class="area-string">東京</div>
+        <% end %>
+    </li>
+    <li class="area-list">
+        <%= link_to "/rooms?search=大阪", class: 'area-link' do %>
+            <img src="/assets/img_osaka.jpg" alt="東京" class="area-img">
+            <div class="area-string">大阪</div>
+        <% end %>
+    </li>
+    <li class="area-list">
+        <%= link_to "/rooms?search=京都", class: 'area-link' do %>
+            <img src="/assets/img_kyoto.jpg" alt="東京" class="area-img">
+            <div class="area-string">京都</div>
+        <% end %>
+    </li>
+    <li class="area-list">
+        <%= link_to "/rooms?search=札幌", class: 'area-link' do %>
+            <img src="/assets/img_sapporo.jpg" alt="東京" class="area-img">
+            <div class="area-string">札幌</div>
+        <% end %>
+    </li>
+</ul>

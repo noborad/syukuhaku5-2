@@ -1,0 +1,15 @@
+<div class="account-content text-center">
+
+    <h1>アカウント</h1>
+
+    <h3>メールアドレス</h3>
+    <p><%= current_user.email %></p>
+
+    <h3>パスワード</h3>
+    <p>*********</p>
+
+    <%= link_to "編集", "/users/edit", class: "btn btn-primary" %>
+
+    <%= link_to "プロフィール", "/profile_edit", class: "btn btn-primary" %>
+
+</div>
