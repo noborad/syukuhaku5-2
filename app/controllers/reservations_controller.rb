@@ -13,8 +13,9 @@ class ReservationsController < ApplicationController
     # redirect_to root_path notice:"予約が完了しました"
     # @reservations = Reservation.new(reservation_params)
     @reservations = Reservation.new(reservation_params)
+    @user = current_user.id
     if @reservations.save
-      redirect_to "/"
+      redirect_to "/users/:id/reserved_room"
     end
   end
 
