@@ -10,9 +10,9 @@ CarrierWave.configure do |config|
     config.fog_public = false
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: 'AKIARDWG3XUQ2CFHO43A', # アクセスキー
-      aws_secret_access_key: '4gLXDBXyjFR5LyLRDlzCFf47NWyby404jvcABYCk', # シークレットアクセスキー
-      region: 'ap-northeast-1', # リージョン
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'], # アクセスキー
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], # シークレットアクセスキー
+      region: ENV['S3_REGION'], # リージョン
       path_style: true
     }
   else # 本番環境以外の場合はアプリケーション内にアップロード
